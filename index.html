@@ -554,9 +554,9 @@
           <p class="text-white">Submit your details to receive the project brochure</p>
         </div>
 
-        <!--  Netlify Form -->
+        <!-- ✅ Netlify Form -->
         <form name="popup-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-one__form">
-          <!-- Required hidden input -->
+          <!-- Hidden field required by Netlify -->
           <input type="hidden" name="form-name" value="popup-contact">
 
           <!-- Honeypot field -->
@@ -617,6 +617,13 @@
               </select>
             </div>
 
+            <!-- Message -->
+            <div class="col-md-12">
+              <div class="contact-one__input-box">
+                <textarea name="message" placeholder="Message (Optional)" rows="3"></textarea>
+              </div>
+            </div>
+
             <!-- Submit -->
             <div class="col-12 text-center mt-3">
               <button type="submit" class="thm-btn contact-one__btn w-100">
@@ -630,7 +637,7 @@
   </div>
 </section>
 
-<!--  Dummy form for Netlify detection -->
+<!-- ✅ Dummy hidden form for Netlify build detection -->
 <form name="popup-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="text" name="first_name" />
   <input type="text" name="last_name" />
@@ -639,7 +646,9 @@
   <input type="text" name="phone" />
   <input type="text" name="apartment" />
   <input type="text" name="buyer_type" />
+  <textarea name="message"></textarea>
 </form>
+
 
     <!-- footer begin -->
     <footer class="text-light section-dark">
