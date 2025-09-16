@@ -12983,7 +12983,16 @@ img {
   background: #fff;
   color: var(--alipes-white);
 }
-
+.contact-one__form-box::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 5px;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
 /* Close button */
 .popup-close {
   position: absolute;
@@ -13111,6 +13120,7 @@ select {
 }
 .nice-select{
     background-color: transparent !important;
+    border-right: 1px solid #ccc !important;
 }
 .nice-select .list {
   max-height: 200px !important;   /* ✅ dropdown ki max height */
@@ -13148,6 +13158,7 @@ select {
     z-index: 10;
     display: flex;
     align-items: center;
+    color: rgba(255, 255, 255, .6);
 }
 .contact-one__input-box input, .contact-one__input-box select, .custom-select::after{
     border-bottom: 2px solid #fffefe;
