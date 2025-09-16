@@ -41,6 +41,9 @@
 
   <!-- Custom CSS -->
   <link href="css/swiper-custom-1.css" rel="stylesheet" type="text/css">
+
+  
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
 </head>
 
 <body class="dark-scheme section-dark">
@@ -533,6 +536,111 @@
 
     </div>
 
+
+<!-- Popup Overlay -->
+<section id="contactPopup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="popup-close">&times;</span>
+
+    <div class="contact-one__right">
+      <div class="contact-one__form-box">
+        <div class="contact-form-bg"
+          style="background-image: url(https://sobha-promotions.netlify.app/.netlify/images?url=/assets/images/contact-1.png);">
+        </div>
+
+        <div class="section-title text-left">
+          <span class="section-title__tagline">Contact Us</span>
+          <h2 class="section-title__title">Speak to an Agent</h2>
+          <p class="text-white">Submit your details to receive the project brochure</p>
+        </div>
+
+        <!--  Netlify Form -->
+        <form name="popup-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-one__form">
+          <!-- Required hidden input -->
+          <input type="hidden" name="form-name" value="popup-contact">
+
+          <!-- Honeypot field -->
+          <p style="display:none;">
+            <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+          </p>
+
+          <div class="row g-1">
+            <!-- First Name -->
+            <div class="col-md-6">
+              <div class="contact-one__input-box">
+                <input type="text" placeholder="First Name" name="first_name" required>
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-md-6">
+              <div class="contact-one__input-box">
+                <input type="text" placeholder="Last Name" name="last_name" required>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-12">
+              <div class="contact-one__input-box">
+                <input type="email" placeholder="Email Address" name="email" required>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-12">
+              <div class="phone-input">
+                <!-- Country Code Select -->
+                <select id="countryCode" name="country_code" class="country-code" required></select>
+                <!-- Phone Input -->
+                <input type="text" class="phone-number" name="phone" placeholder="Phone Number" required>
+              </div>
+            </div>
+
+            <!-- Apartment Choice -->
+            <div class="col-md-6">
+              <label class="fw-bold mb-1">Preferred Apartment</label>
+              <select name="apartment" class="custom-select" required>
+                <option value="">Select Apartment</option>
+                <option value="1 Bedroom">1 Bedroom</option>
+                <option value="2 Bedroom">2 Bedroom</option>
+                <option value="3 Bedroom">3 Bedroom</option>
+              </select>
+            </div>
+
+            <!-- Buyer Type -->
+            <div class="col-md-6">
+              <label class="fw-bold mb-1">Are you buying as</label>
+              <select name="buyer_type" class="custom-select" required>
+                <option value="">Select Option</option>
+                <option value="Investor">Investor</option>
+                <option value="End User">End User</option>
+              </select>
+            </div>
+
+            <!-- Submit -->
+            <div class="col-12 text-center mt-3">
+              <button type="submit" class="thm-btn contact-one__btn w-100">
+                Send a Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  Dummy form for Netlify detection -->
+<form name="popup-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="first_name" />
+  <input type="text" name="last_name" />
+  <input type="email" name="email" />
+  <input type="text" name="country_code" />
+  <input type="text" name="phone" />
+  <input type="text" name="apartment" />
+  <input type="text" name="buyer_type" />
+</form>
+
     <!-- footer begin -->
     <footer class="text-light section-dark">
         <div class="container text-center">
@@ -574,6 +682,43 @@
     <script src="js/validation-booking.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/custom-swiper-2.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+
+    <script>
+// Event delegation: handle ALL .contact-now buttons (static + sticky + future)
+document.body.addEventListener("click", function(e) {
+  if (e.target.classList.contains("contact-now") || e.target.closest(".contact-now")) {
+    e.preventDefault();
+    document.getElementById("contactPopup").style.display = "flex";
+  }
+});
+
+// Close popup
+document.querySelector(".popup-close").addEventListener("click", function() {
+  document.getElementById("contactPopup").style.display = "none";
+});
+
+// Close when clicking outside
+window.addEventListener("click", function(e) {
+  const popup = document.getElementById("contactPopup");
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+});
+
+// Auto-open popup 5 seconds after page load
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    document.getElementById("contactPopup").style.display = "flex";
+  }, 4000); // 5000 ms = 5s
+});
+</script>
+
+<script src="countries.js"></script>
+<script>
+  populateCountries("countryCode");
+</script>
+
 
 
 </body>

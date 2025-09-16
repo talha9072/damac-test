@@ -12897,3 +12897,289 @@ img {
 .community-card:hover .overlay p {
   color: #f5e7c4; /* softer gold tone for text */
 }
+
+
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+ 
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+  align-items: flex-start;
+}
+
+/* Popup container */
+.popup-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+/* Ensure form box is visible */
+.contact-one__form-box {
+  position: relative;
+  background: #1a1a1a; /* fallback background so not blank */
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Your Provided Styling */
+.contact-form-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: luminosity;
+  opacity: 0.08;
+  z-index: 0; /* changed from -1 to 0 so it stays behind content */
+}
+
+/* Inputs & textarea */
+.contact-one__input-box {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-one__input-box input[type="text"],
+.contact-one__input-box input[type="email"],
+.contact-one__input-box textarea {
+  width: 100%;
+  border: 1px solid #514b44;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 20px;
+}
+
+.contact-one__input-box textarea {
+  height: 130px;
+}
+
+/* Button */
+.contact-one__btn {
+  background-color:var(--primary-color); /* example base color */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+}
+.contact-one__btn:hover {
+  background: #fff;
+  color: var(--alipes-white);
+}
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: #000;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+
+
+/* Popup container */
+.popup-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  z-index: 10000;
+  margin: 40px auto;
+}
+
+/* Form box */
+.contact-one__form-box {
+  position: relative;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  overflow: visible !important; /* override hidden */
+  z-index: 10001;
+}
+
+.contact-form-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: luminosity;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+/* General input + select */
+.contact-one__input-box input,
+.contact-one__input-box select,
+.custom-select {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border: 1px solid #514b44;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  appearance: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Phone input wrapper */
+.phone-input {
+  display: flex;
+  align-items: stretch; /* same height for both */
+  border: 1px solid #514b44;
+  border-radius: 6px;
+  background: transparent;
+  overflow: visible !important;
+  position: relative;
+  z-index: 10002;
+}
+
+/* Country code select */
+.country-code {
+  min-width: 120px;
+  height: 45px;           
+  line-height: 45px;
+  border: none;
+  border-right: 1px solid #514b44;
+  border-radius: 6px 0 0 6px;
+  margin: 0;              
+  padding: 0 10px;
+}
+
+/* Phone number input */
+.phone-number {
+  flex: 1;
+  height: 45px;           
+  border-radius: 0 6px 6px 0;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+}
+/*  Responsive fix: On small screens stack vertically */
+@media (max-width: 576px) {
+  .phone-input {
+    flex-direction: column;
+    align-items: stretch;
+    border: none;
+    gap: 10px;
+  }
+
+  .country-code {
+    border: 1px solid #514b44;
+    border-radius: 6px;
+  }
+
+  .phone-number {
+    border: 1px solid #514b44;
+    border-radius: 6px;
+  }
+}
+/* Dropdown list override */
+select {
+  z-index: 10 !important;
+  position: relative;
+}
+.nice-select{
+    background-color: transparent !important;
+}
+.nice-select .list {
+  max-height: 200px !important;   /* ✅ dropdown ki max height */
+  overflow-y: auto !important;    /* ✅ scroll bar enable */
+  background: #222 !important; /* ✅ same popup background */
+  color: #fff;         /* ✅ white text */
+  z-index: 10 !important;      /* ✅ always above popup */
+}
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: var(--alipes-secondary);
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+  z-index: 10010;
+}
+.contact-one__input-box input, .contact-one__input-box select, .custom-select {
+    width: 100%;
+    height: 48px !important;
+    padding: 10px;
+    border: 1px solid #514b44;
+    border-radius: 6px;
+    font-size: 14px;
+    background: transparent;
+    cursor: pointer;
+    appearance: auto;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.contact-one__input-box input, .contact-one__input-box select, .custom-select::after{
+    border-bottom: 2px solid #fffefe;
+    border-right: 2px solid #fffefe;
+}
+.nice-select:after{
+    border-bottom: 2px solid #fffefe;
+    border-right: 2px solid #fffefe;
+}
+.nice-select:active, .nice-select.open, .nice-select:focus{
+    z-index: 999999999 !important;
+}
+/* Ensures Nice Select shows inline flag icons correctly */
+.lipis-flag-container .span {
+  display: flex;
+  align-items: center;
+}
+
+.lipis-flag-container .fi {
+  font-size: 1.2em;
+  margin-right: 6px;
+}
+
+.nice-select .current .fi {
+  vertical-align: middle;
+}
+@media (max-width: 576px) {
+/* Close button */
+.popup-close {
+  top: 80px; 
+  right: 8px;
+  background: var(--alipes-secondary);
+  
+}
+}
