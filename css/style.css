@@ -12980,8 +12980,8 @@ img {
   position: relative;
 }
 .contact-one__btn:hover {
-  background: #fff;
-  color: var(--alipes-white);
+  background: var(--bg-dark-1);
+  color: white;
 }
 .contact-one__form-box::before {
     content: "";
