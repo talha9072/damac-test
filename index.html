@@ -295,6 +295,150 @@
 </style>
 
 
+
+<!-- DAMAC 4-Image Highlight Section -->
+<section id="section-highlights" class="py-5 bg-white">
+  <div class="container-fluid">
+    <div class="row g-3">
+      
+      <!-- Item 1 -->
+      <div class="col-md-3 col-12 highlight-item">
+        <div class="highlight-box">
+          <img src="images/gym.webp" alt="Luxury Amenities">
+          <div class="highlight-overlay"></div>
+          <div class="highlight-content">
+            <h4 class="fw-bold">WORLD-CLASS AMENITIES</h4>
+            <p class="small">
+              From infinity pools to designer gyms and spas, DAMAC communities are crafted for a lifestyle of comfort and leisure.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="col-md-3 col-12 highlight-item">
+        <div class="highlight-box">
+          <img src="images/lifestyle.webp" alt="Luxury Lifestyle">
+          <div class="highlight-overlay"></div>
+          <div class="highlight-content">
+            <h4 class="fw-bold">PREMIUM LIFESTYLE</h4>
+            <p class="small">
+              Experience vibrant neighborhoods with golf courses, lagoons, retail promenades, and fine dining at your doorstep.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="col-md-3 col-12 highlight-item">
+        <div class="highlight-box">
+          <img src="images/safe.webp" alt="Safe Communities">
+          <div class="highlight-overlay"></div>
+          <div class="highlight-content">
+            <h4 class="fw-bold">SAFE COMMUNITIES</h4>
+            <p class="small">
+              Gated communities with 24/7 security, ensuring peace of mind and a secure environment for families and investors.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="col-md-3 col-12 highlight-item">
+        <div class="highlight-box">
+          <img src="images/high-roi.webp" alt="High ROI Investment">
+          <div class="highlight-overlay"></div>
+          <div class="highlight-content">
+            <h4 class="fw-bold">HIGH ROI INVESTMENT</h4>
+            <p class="small">
+              DAMAC properties offer strong rental yields and long-term value, making Dubai one of the world’s top investment hubs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* 4-Image Highlights */
+.highlight-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-box {
+  position: relative;
+  height: 400px; /* all images same height */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.highlight-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.highlight-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+  transition: background .4s ease;
+  z-index: 1;
+}
+
+.highlight-box:hover img {
+  transform: scale(1.08);
+}
+
+.highlight-box:hover .highlight-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.25));
+}
+
+.highlight-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  z-index: 2;
+  text-align: left;
+}
+
+.highlight-content h4 {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.highlight-content p {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .highlight-box {
+    height: 280px; /* smaller height on mobile */
+  }
+  .highlight-content {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  .highlight-content h4 {
+    font-size: 1rem;
+  }
+  .highlight-content p {
+    font-size: 0.8rem;
+  }
+}
+</style>
+
         <section class="p-0 overflow-hidden">
             <div class="container-fluid">
                 <div class="row">
