@@ -3139,7 +3139,14 @@ a.btn-add_to_cart:before {
   position: absolute;
   left: 20px;
 }
+.damac-btn{
+  color: white !important;
+  background-color: var(--primary-color) !important;
 
+}
+.damac-btn:hover{
+  background-color: var(--bg-dark-1) !important;
+}
 a.btn-main,
 a.btn-main:active,
 a.btn-main:focus,
