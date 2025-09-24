@@ -12876,6 +12876,7 @@ img {
   white-space: normal;   /* wrap text instead of overflow */
   word-break: break-word;
   overflow-wrap: anywhere;
+  color: var(--bg-dark-1);
 }
 
 /* Hover effects with gold glow */
@@ -12897,7 +12898,7 @@ img {
 }
 
 .community-card:hover .overlay h4 {
-  color: #e0c08d; /* light gold */
+  color: #e0c08d !important; /* light gold */
 }
 
 .community-card:hover .overlay p {
