@@ -13460,3 +13460,16 @@ select {
     height: 300px;
   }
 }
+
+
+.map-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.map-section img {
+  width: 100%;
+  height: auto;       /* keep aspect ratio */
+  display: block;
+  object-fit: cover;  /* ensures it covers nicely if you later fix height */
+}
